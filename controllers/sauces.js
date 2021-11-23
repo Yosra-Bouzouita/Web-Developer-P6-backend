@@ -82,7 +82,7 @@ exports.likeSauce = (req, res, next) => {
           { _id: req.params.id },
           {
             likes: sauce.likes + 1,
-            $push: { usersLiked: req.body.userId }, // usersLiked.push(req.body.userId)
+            $push: { usersLiked: req.body.userId },
           }
         )
 
@@ -100,7 +100,7 @@ exports.likeSauce = (req, res, next) => {
           { _id: req.params.id },
           {
             dislikes: sauce.dislikes + 1,
-            $push: { usersDisliked: req.body.userId }, // usersLiked.push(req.body.userId)
+            $push: { usersDisliked: req.body.userId },
           }
         )
 
@@ -119,7 +119,7 @@ exports.likeSauce = (req, res, next) => {
             { _id: req.params.id },
             {
               likes: sauce.likes - 1,
-              $pull: { usersLiked: req.body.userId }, // usersLiked.push(req.body.userId)
+              $pull: { usersLiked: req.body.userId },
             }
           )
 
@@ -130,7 +130,7 @@ exports.likeSauce = (req, res, next) => {
             { _id: req.params.id },
             {
               dislikes: sauce.dislikes - 1,
-              $pull: { usersDisliked: req.body.userId }, // usersDisliked.push(req.body.userId)
+              $pull: { usersDisliked: req.body.userId },
             }
           )
 
